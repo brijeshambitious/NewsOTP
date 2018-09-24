@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "360147057088",
+    "firebase_url": "https://imsucnewsphoneotp.firebaseio.com",
+    "project_id": "imsucnewsphoneotp",
+    "storage_bucket": "imsucnewsphoneotp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360147057088:android:91120fdf3eec8357",
+        "android_client_info": {
+          "package_name": "brijesh.imsucnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360147057088-63qhlkpn6a30c13g8oal01njb7v7tm58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "brijesh.imsucnews",
+            "certificate_hash": "aa47dfd0ae302a800a8f81eebbe3506b73a334a1"
+          }
+        },
+        {
+          "client_id": "360147057088-3k9a7b6346iqc4s4j86egem7tppg21qj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHzl90D2Imopozq8FTH1viJYX_Ey0vVog"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360147057088-3k9a7b6346iqc4s4j86egem7tppg21qj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

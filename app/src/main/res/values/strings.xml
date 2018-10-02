@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">IMSUC News</string>
-    <string name="action_settings">About</string>
+    <string name="action_settings">Sign Out</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_tab1">Tab1</string>
     <string name="title_activity_splash">SplashActivity</string>
 
-    <string name="verify_note">To get access to IMSUC NEWS, kindly log in with your mobile number.</string>
+    <string name="verify_note">To get access to this app, kindly log in with your mobile number.</string>
 
     <string name="code_instructions">Your details would never be shared </string>
     <string name="title_activity_phone">"Login "</string>

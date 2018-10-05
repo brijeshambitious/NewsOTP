@@ -78,6 +78,12 @@ public class PhoneActivity extends AppCompatActivity {
     private Pinview smsCode;
     private String phone;
 
+
+    private int secondsLeft = 0;
+    private int minutes;
+    private int seconds;
+    private String timeString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,7 +199,6 @@ public class PhoneActivity extends AppCompatActivity {
                 }
 
 
-
                 // Show a message and update the UI
                 // ...
             }
@@ -219,7 +224,7 @@ public class PhoneActivity extends AppCompatActivity {
             public void onDataEntered(Pinview pinview, boolean b) {
 
                 //trigger this when the OTP code has finished typing
-               // smsCode.getChildAt(0).requestFocus();
+                // smsCode.getChildAt(0).requestFocus();
                 final String verifyCode = smsCode.getValue();
                 verifyPhoneNumberWithCode(mVerificationId, verifyCode);
             }
@@ -230,10 +235,10 @@ public class PhoneActivity extends AppCompatActivity {
 
     private void retryVerify() {
         resendVerificationCode(phone, mResendToken);
-        attemptLogin();
+        countDownTimer();
         //timer ends here
 
-}
+    }
 
 
     private void verifyPhoneNumberWithCode(String verificationId, String code) {
@@ -291,7 +296,15 @@ public class PhoneActivity extends AppCompatActivity {
 
             //go ahead and verify number
             startPhoneNumberVerification(phone);
-            //time to show retry button
+
+            countDownTimer();
+
+
+        }
+
+    }    //time to show retry button
+
+        private void countDownTimer() {
             new CountDownTimer(45000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -310,7 +323,32 @@ public class PhoneActivity extends AppCompatActivity {
         }
 
 
+
+
+ /*   private void countDownTimer() {
+        new CountDownTimer(30000, 100) {
+            public void onTick(long ms) {
+                if (Math.round((float) ms / 1000.0f) != secondsLeft) {
+                    secondsLeft = Math.round((float) ms / 1000.0f);
+                    minutes = (secondsLeft % 3600) / 60;
+                    seconds = secondsLeft % 60;
+                    timeString = String.format("%02d:%02d", minutes, seconds);
+                    timer.setText(timeString);
+                    resendCode.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            public void onFinish() {
+                timer.setText("00:00");
+                resendCode.startAnimation(AnimationUtils.loadAnimation(PhoneActivity.this, R.anim.slide_from_right));
+                resendCode.setVisibility(View.VISIBLE);
+            }
+        }.start();
+
     }
+
+    */
+
 
     private boolean isPhoneValid(String phone) {
         return phone.length() > 8;
